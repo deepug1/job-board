@@ -8,9 +8,9 @@
      
 
     <label for="{{ $name }}" class="mb-1 flex items-center">
-        <input type="radio" name="{{ $name }}" value="entry" id="experience" class="mr-1"
-            @checked('entry'===request('experience')) />
-        <span class="ml-2">Entry</span>
+        <input type="radio" name="{{ $name }}" value="{{ $option }}" id="experience" class="mr-1"
+            @checked($option === request($name)) />
+        <span class="ml-2 text-transform: capitalize">{{ $option }}</span>
     </label>
 
     @endforeach
