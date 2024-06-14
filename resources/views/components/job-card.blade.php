@@ -3,7 +3,7 @@
         <h2 class="text-lg font-medium">
             {{ $job->title }}
         </h2>
-        <div class="text-slate-500">{{ $job->salary}}</div>
+        <div class="text-slate-500">${{ $job->salary}}</div>
     </div>
 
     <div class="mb-4 flex items-center justify-between text-sm text-slate-500">
@@ -21,8 +21,6 @@
 
 
 
-    <p class="mb-4 text-sm text-slate-500">
-        {!! nl2br(e($job->description)) !!}
-    </p>
+    
     {{ $slot }}
 </x-card>
