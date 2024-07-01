@@ -5,17 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Gate;
+
 class JobApplicationController extends Controller
 {
     public function create(Job $job)
     {
-        $this->authorize('apply', $job);
+        
+        Gate::authorize('apply', $job);
+        // $this->authorize('apply', $job);
         return view('job_application.create', ['job' => $job]);
     }
 
     public function store(Job $job, Request $request)
     {
-        $this->authorize('apply', $job);
+        Gate::authorize('apply', $job);
+        // $this->authorize('apply', $job);
         $job->jobApplications()->create([
             'user_id' => $request->user()->id,
             ...$request->validate([
