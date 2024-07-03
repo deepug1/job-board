@@ -30,7 +30,7 @@ class AuthController extends Controller
             return redirect()->intended('/');
         } else {
             return redirect()->back()
-                ->with('error', 'Invalid credentials');
+                ->with('error', 'Register as employer first');
         }
     }
 
