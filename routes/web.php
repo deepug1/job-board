@@ -26,6 +26,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('employer', EmployerController::class)
         ->only(['create', 'store']);
         
-    Route::middleware('employer')
-        ->resource('my-jobs', MyJobController::class);
+    Route::middleware('employer')->resource('my-jobs', MyJobController::class);
+     Route::middleware('employer')->get('/my-jobs/{my_job}/downloadcv/{user}', [MyJobController::class, 'downloadCV'])
+     ->name('my-jobs.download');
+    //  Route::middleware('employer')->resource('photos', PhotoController::class);
+
 });

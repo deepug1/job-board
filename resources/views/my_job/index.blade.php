@@ -15,8 +15,9 @@
                     <div>
                         Applied {{ $application->created_at->diffForHumans() }}
                     </div>
-                    <div>
-                        Download CV
+                    <div class="mt-4">
+                        <x-link-button :href="route('my-jobs.download', [$job->id, $application->user->id])">
+                            Download CV</x-link-button>
                     </div>
                 </div>
 

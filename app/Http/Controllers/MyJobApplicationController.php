@@ -32,4 +32,5 @@ class MyJobApplicationController extends Controller
             'Job application removed.'
         );
     }
+    
 }
